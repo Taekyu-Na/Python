@@ -57,8 +57,14 @@ temp = glass1
 glass1 = glass2
 glass2 = temp
 
+var1 = input("Welcome to the Band Name Generator.\nWhat's the name of the city you grew up in?\n")
+var2 = input("What's your pet's name?\n")
+print("Your band name could be: " + var1 + " " + var2)
 
-
+print("Welcome to the Band Name Generator.")
+var1 = input("What's the name of the city you grew up in?\n")
+var2 = input("What's your pet's name?\n")
+print("Your band name could be: " + var1 + " " + var2)
 
 
 
