@@ -34,7 +34,8 @@ var1 = input("Enter your name")
 var2 = len(var1)
 print("Number of letters in your name: " + str(var2))
 
-수학적 연산
+Mathematic Operation
+(수학적 연산)
 print(123 + 456)
 print(3 - 1)
 print(3 * 3)
@@ -45,6 +46,62 @@ print(2 ** 2) # 제곱
 # PEMDAD (Parentheses, Exponents, Multiplication/Division, Addition/Subtraction
 괄호, 지수, 곱셈, 나눗셈, 덧셈, 뺄셈
 
+//Debugging Test
+bmi = 84 / 1.65 ** 2
+print(bmi)
+
+Number Panipulation
+print(int(bmi)) # 절사
+print(round(bmi)) # 반올림
+print(round(bmi, 2)) # 소수점 n째자리까지 반올림
+
+Assingment Operation
+(할당 연산자)
+
+score = 0
+score +,-,*,/= 1
+print(score)
+
+f-strings
+score = 0
+height = 180
+is_winning = True
+
+print(f"Your score is {score}, your height is {height}, and your winning is {is_winning}")
+
+Project
+
+print("Welcome to the tip calculator!")
+total_bill = input("What was the total bill? $ ")
+tip = input("How much tip would you like to give? 10, 12, or 15? ")
+no_of_people = input("How many people to split the bill?")
+
+tip_percent = float("1." + tip)
+total_amount = int(total_bill) * tip_percent
+per_person = round(total_amount / int(no_of_people), 2)
+
+print(f"Each person should pay: ${per_person}")
+# 아래도 가능
+print("Welcome to the tip calculator!")
+bill = float(input("What was the total bill? $"))
+tip = int(input("How much tip would you like to give? 10, 12, or 15? "))
+people = int(input("How many people to split the bill? "))
+
+bill_with_tip = (tip / 100 * bill) + bill
+bill_per_person = round(bill_with_tip / people, 2)
+
+print(f"Each person should pay: ${bill_per_person}")
 
 
-print(round(bmi)
+
+
+
+
+
+
+
+
+
+
+
+
