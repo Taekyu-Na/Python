@@ -62,7 +62,7 @@ score = 0
 score +,-,*,/= 1
 print(score)
 
-f-strings
+F-strings
 score = 0
 height = 180
 is_winning = True
