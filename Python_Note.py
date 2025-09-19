@@ -7,3 +7,5 @@
 String안에 큰따옴표를 넣으려면 작은 따옴표로 감싸도 됨
 유용한 기호 앞에 \를 넣으면 escape 가능
 .lower() .upper()로 대/소문자 변경 가능
+random.random() = 0.0 <= X < 1.0
+
