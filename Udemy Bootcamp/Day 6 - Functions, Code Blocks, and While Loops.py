@@ -149,7 +149,22 @@ while not at_goal():
     else:
         move()
 
+Project
+15일차 강의 끝나고 와서 Infinite Loop 해결해보기
 
+def turn_right():
+    turn_left()
+    turn_left()
+    turn_left()
+             
+while not at_goal():
+    if right_is_clear():
+        turn_right()
+        move()
+    elif front_is_clear():
+        move()
+    else:
+        turn_left()
 
 
 
