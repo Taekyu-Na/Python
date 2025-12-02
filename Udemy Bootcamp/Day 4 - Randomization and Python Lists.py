@@ -46,7 +46,7 @@ chemical = ["H2O", "Sodium"]
 combined = [element, chemical]
 print(combined)
 
-Proejct
+Project
 
 import random
 
