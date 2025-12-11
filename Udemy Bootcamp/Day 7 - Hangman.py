@@ -18,3 +18,4 @@ for char in chosen_word:
         print("Right")
     else:
         print("Wrong")
+
