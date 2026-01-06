@@ -50,3 +50,27 @@ while more_bidders == True:
         bid_index = dictionary["price"].index(max_bid)
         print(f"The winner is {dictionary["name"][bid_index]} with a bid of ${max_bid}")
         more_bidders = False
+
+## 선생님 답
+def get_highest_bidder(bidding_dictionary):
+    highest_bidding = 0
+    winner = ""
+    for bidder in bidding_dictionary:
+        bid_amount = bidding_dictionary[bidder]
+        if bid_amount > highest_bidding:
+            highest_bidding = bid_amount
+            winner = bidder
+    print(f"The winner is {winner} with a bid of ${highest_bidding}")
+
+bids = {}
+more_bidders = True
+while more_bidders:
+    name = input("What is your name?   ")
+    price = int(input("What is your bid?  : $ "))
+    bids[name] = price
+    more_bid = input("Are there are any other bidders? Type 'yes' or 'no'.\n").lower()
+    if more_bid == "no":
+        more_bidders = False
+        get_highest_bidder(bids)
+    elif more_bid == "yes":
+        print("\n" * 20)
