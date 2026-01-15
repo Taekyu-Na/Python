@@ -54,4 +54,76 @@ length = len(formatted_name)
 
 Project - Calculator
 
+# 내답
+import art
+print(art.logo)
 
+def add(n1, n2):
+    return n1 + n2
+
+def subtract(n1, n2):
+    return n1 - n2
+
+def multiply(n1, n2):
+    return n1 * n2
+
+def divide(n1, n2):
+    return n1 / n2
+
+operations = {
+    "+": add,
+    "-": subtract,
+    "*": multiply,
+    "/": divide
+}
+
+should_continue = True
+first_number = float(input("What's the first number?:  "))
+while should_continue == True:
+    operation = input("+\n-\n*\n/\nPick an operation:  ")
+    next_number = float(input("What's the next number?:  "))
+
+    value = operations[operation](first_number, next_number)
+    print(f"{first_number} {operation} {next_number} = {value}")
+    more_calculation = input(f"Type 'y' to continue calculating with {value}, or type 'n' to start a new calculation:  ").lower()
+    if more_calculation == "y":
+        first_number = value
+    if more_calculation == "n":
+        should_continue = False
+
+# 선생님 답
+
+def calculator():
+    print(art.logo)
+    first_number = float(input("What's the first number?:  "))
+
+    should_continue = True
+    while should_continue == True:
+        for symbol in operations:
+            print(symbol)
+        operation = input("Pick an operation:  ")
+        next_number = float(input("What's the next number?:  "))
+
+        value = operations[operation](first_number, next_number)
+        print(f"{first_number} {operation} {next_number} = {value}")
+        more_calculation = input(f"Type 'y' to continue calculating with {value}, or type 'n' to start a new calculation:  ").lower()
+        if more_calculation == "y":
+            first_number = value
+        if more_calculation == "n":
+            should_continue = False
+            print("\n" * 20)
+            calculator()
+
+calculator()
+# ---------------------------------------------
+    while should_continue == True:
+        for symbol in operations:
+            print(symbol)
+        operation = input("Pick an operation:  ")
+# Start - operation symbol input이 dictionary 안에 없으면 다른 메시지 출력하도록 개선
+        while operation not in operations:
+            for symbol in operations:
+                print(symbol)
+            operation = input("Input correct operation symbol:  ")
+# End - operation symbol input이 dictionary 안에 없으면 다른 메시지 출력하도록 개선
+        next_number = float(input("What's the next number?:  "))
