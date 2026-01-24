@@ -97,3 +97,27 @@ data_dict = {
 
 df = pandas.DataFrame(data_dict)
 df.to_csv("squirrel_count_answer")
+
+# 연습하기
+df = pandas.read_csv("50_states.csv")
+
+def get_axis():
+    should_continue = True
+
+    while should_continue == True:
+        user_input = input("Choose a state to get the axis.:  ").title()
+        record = df[df.state == user_input]
+        var_x = int(record.x.values[0])
+        var_y = int(record.y.values[0])
+        print(f"{user_input}'s x: {var_x}, y: {var_y}")
+        while should_continue == True:
+            another_one = input("Choose another state to get axis. Or type 'no' to end.  ").title()
+            if another_one == "No":
+                should_continue = False
+            else:
+                record = df[df.state == another_one]
+                var_x = record.x.values
+                var_y = record.y.values
+                print(f"{another_one}'s x: {var_x}, y: {var_y}")
+
+get_axis()
