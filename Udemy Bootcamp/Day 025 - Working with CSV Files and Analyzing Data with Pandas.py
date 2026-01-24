@@ -61,3 +61,26 @@ data_dict = {
 data = pandas.DataFrame(data_dict)
 data.to_csv("Ticker.csv")
 
+# Central Park Squirrel Analysis
+data = pandas.read_csv("2018_Central_Park_Squirrel_Census_-_Squirrel_Data.csv")
+
+color_list = data["Primary Fur Color"].to_list()
+gray_count = color_list.count("Gray")
+
+dictionary = {
+    "Fur Color": [],
+    "Count": []
+}
+
+fur_color = []
+for row in data["Primary Fur Color"]:
+    if row not in fur_color:
+        fur_color.append(row)
+        dictionary["Fur Color"].append(row)
+
+for color in fur_color:
+    each_count = color_list.count(color)
+    dictionary["Count"].append(each_count)
+
+data = pandas.DataFrame(dictionary)
+data.to_csv("squirrel_count.csv")
