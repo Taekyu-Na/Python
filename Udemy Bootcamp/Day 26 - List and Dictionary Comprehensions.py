@@ -111,6 +111,13 @@ user_name = input("What is your name?  ").upper()
 final_list = [nato_dict[letter] for letter in user_name]
 print(final_list)
 
+# 복습
+import pandas
 
+df = pandas.read_csv("nato_phonetic_alphabet.csv")
 
+nato_dict = {row.letter:row.code for (index, row) in df.iterrows()}
 
+user_input = input("What is your name?  ").upper()
+final_list = [nato_dict[letter] for letter in user_input]
+print(final_list)
