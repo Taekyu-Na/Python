@@ -98,7 +98,7 @@ data_dict = {
 df = pandas.DataFrame(data_dict)
 df.to_csv("squirrel_count_answer")
 
-# 연습하기
+# 연습하기 (1) x, y 값 추출하기
 df = pandas.read_csv("50_states.csv")
 
 def get_axis():
@@ -121,3 +121,24 @@ def get_axis():
                 print(f"{another_one}'s x: {var_x}, y: {var_y}")
 
 get_axis()
+
+# 연습하기 (2) - .item()이용해서 값만 추출하기
+import pandas
+
+data = pandas.read_csv("50_states.csv")
+
+def get_x_y(state):
+    var_state = data[data.state == state]
+    var_x = var_state.x.item()
+    var_y = var_state.y.item()
+    print(f"Your input: {state}, X:{var_x}, Y:{var_y}")
+
+should_continue = True
+state_list = data["state"].to_list()
+while should_continue == True:
+    user_input = input("Input a state to get the x and the y axis:  ").title()
+    if user_input in state_list:
+        get_x_y(user_input)
+    else:
+        should_continue = False
+
