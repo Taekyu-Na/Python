@@ -97,5 +97,20 @@ for (index, row) in student_df.iterrows():
 
 Project
 
+import pandas
+
+data = pandas.read_csv("nato_phonetic_alphabet.csv") # CSV 파일을 DataFrame으로 로딩
+# read_csv() 함수에서 1. 파일열고 2. CSV 파싱 3. 각 열을 Series로 생성
+# 모든 Series 묶어 DataFrame 객체 생성
+
+nato_dict = {row.letter:row.code for (index,row) in data.iterrows()} # DataFrame을 dictionary로 변환
+# iterrows()는 이터레이터로 각 반복마다 튜플(index, row) 반환
+# (index, row)로 튜플 언패킹. index는 DataFrame의 인덱스값이고 row는 해당 행 전체를 담은 Series 객체
+
+user_name = input("What is your name?  ").upper()
+final_list = [nato_dict[letter] for letter in user_name]
+print(final_list)
+
+
 
 
