@@ -89,6 +89,8 @@ student_dict = {
 for (key, value) in student_dict.items():
     print(key)
     print(value)
+# dict 자체를 순회하면 key만 나오고
+# (k, v)로 언패킹하려면 (key, value) 튜플이 필요
 
 Looping through dataframe
 import pandas
