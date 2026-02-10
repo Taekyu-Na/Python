@@ -60,6 +60,17 @@ students_scores = {student:random.randint(1, 100) for student in names}
 # 60점 이상인 학생만 추출하기
 passed_students = {student:score for (student,score) in students_scores.items() if score >= 60}
 
+# 연습
+names = ["Alex", "Beth", "Caroline", "Dave", "Eugene", "Freddy"]
+student_scores = {student:random.randint(1, 100) for student in names}
+print(student_scores)
+passed_students = {student:score for (student,score) in student_scores.items() if score >= 80 }
+print(passed_students)
+just = {student:score + 1 for student, score in student_scores.items()}
+print(just)
+value = {score: score + 1 for score in student_scores.values()}
+print(value)
+
 # Dictionary Comprehension 실습 (1)
 sentence = "What is the Airspeed Velocity of an Unladen Swallow?"
 result = {word:len(word) for word in sentence.split()}
