@@ -8,4 +8,6 @@ String안에 큰따옴표를 넣으려면 작은 따옴표로 감싸도 됨
 유용한 기호 앞에 \를 넣으면 escape 가능
 .lower() .upper()로 대/소문자 변경 가능
 random.random() = 0.0 <= X < 1.0
-
+comprehension에서 dictionary를 순회하면 기본적으로 key만 순회
+  value를 순회하려면 in dict.values() 필요
+  key와 value를 순회하려면 dict.items() 필요
