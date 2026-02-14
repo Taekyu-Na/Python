@@ -48,8 +48,8 @@ def get_quote():
 import requests
 from datetime import datetime
 
-MY_LAT = 37.490394
-MY_LONG = 127.042262
+MY_LAT = 보안상 생략
+MY_LONG = 보안상 생략
 
 parameters = {
     "lat": MY_LAT,
@@ -124,3 +124,20 @@ while True:
             to_addrs=MY_EMAIL,
             msg="Subject: 위를 보시오.\n\n국제우주정거장 접근중"
         )
+
+# smtplib을 이용한 이메일 전송
+import smtplib
+from email.message import EmailMessage
+
+MY_EMAIL = "tk_na@naver.com"
+MY_PASSWORD = "앱 패스워드"
+
+msg = EmailMessage()
+msg["From"] = MY_EMAIL
+msg["To"] = MY_EMAIL
+msg["Subject"] = "Test Email"
+msg.set_content("This is test email.")
+
+with smtplib.SMTP_SSL("smtp.naver.com", 465) as server:
+    server.login(MY_EMAIL, MY_PASSWORD)
+    server.send_message(msg)
